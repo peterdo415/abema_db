@@ -46,7 +46,7 @@ erDiagram
  view_count_id int "primary index"
  episode_id int "foreign"
  slot_id int "foreign"
- view_count int
+ view_count int "default:0"
  }
  CATEGORIES {
  category_id int "primary index"

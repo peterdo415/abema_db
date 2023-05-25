@@ -1,12 +1,12 @@
 # 完成ファイル
-abema_db_table_modify.mdの方を確認してください。
+abema_db_table.mdの方を確認してください。
 
 # ER図確認手順
 vscodeにて
 * Markdown Preview Mermaid Supportを拡張機能追加
 * `ctrl+shit+v`でプレビュー表示
 
-# テーブル構築手順
+# テーブル構築手順 ※修正要
 * 動作環境
 macOS Monterey 12.6
 VScode 1.78.0

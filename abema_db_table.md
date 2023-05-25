@@ -13,28 +13,28 @@ erDiagram
  EPISODES ||--|| VIEWCOUNTS : ""
 
  CHANNELS {
- channel_id int "primary"
+ channel_id int "primary index"
  channel_name string 
  }
 
  SLOTS {
- slot_id int "primary"
+ slot_id int "primary index"
  broadcast_start_time datetime
  broadcast_finish_time datetime
  channel_id int "foreign"
  }
  PROGRAMS {
- program_id int "primary"
- program_name string
+ program_id int "primary index"
+ program_name string "unique"
  program_detail text
  }
  SEASONS {
- season_id int "primary"
+ season_id int "primary index"
  season_number int
  program_id int "foreign"
  }
  EPISODES {
- episode_id int "primary"
+ episode_id int "primary index"
  episode_number int "NULL"
  episode_title string "NULL"
  episode_detail text "NULL"
@@ -43,14 +43,14 @@ erDiagram
  season_id int "foreign NULL"
  }
  VIEWCOUNTS {
- view_count_id int "primary"
+ view_count_id int "primary index"
  episode_id int "foreign"
  slot_id int "foreign"
  view_count int
  }
  CATEGORIES {
- category_id int "primary"
- category_name string
+ category_id int "primary index"
+ category_name string "unique"
  }
  
  PROGRAMCATEGORIES {

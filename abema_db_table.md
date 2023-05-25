@@ -3,37 +3,37 @@
 ```mermaid
 
 erDiagram
- CHANNEL ||--|{ SLOT : ""
- SLOT ||--o{ EPISODE : ""
- PROGRAM ||--|{ SEASON : ""
- SEASON ||--o{ EPISODE : ""
- PROGRAM ||--|{ PROGRAMCATEGORY : ""
- CATEGORY ||--|{ PROGRAMCATEGORY : ""
- SLOT ||--|| VIEWCOUNT : ""
- EPISODE ||--|| VIEWCOUNT : ""
+ CHANNELS ||--|{ SLOTS : ""
+ SLOTS ||--o{ EPISODES : ""
+ PROGRAMS ||--|{ SEASONS : ""
+ SEASONS ||--o{ EPISODES : ""
+ PROGRAMS ||--|{ PROGRAMCATEGORIES : ""
+ CATEGORYS ||--|{ PROGRAMCATEGORIES : ""
+ SLOTS ||--|| VIEWCOUNTS : ""
+ EPISODES ||--|| VIEWCOUNTS : ""
 
- CHANNEL {
+ CHANNELS {
  channel_id int "primary"
  channel_name string 
  }
 
- SLOT {
+ SLOTS {
  slot_id int "primary"
  broadcast_start_time datetime
  broadcast_finish_time datetime
  channel_id int "foreign"
  }
- PROGRAM {
+ PROGRAMS {
  program_id int "primary"
  program_name string
  program_detail text
  }
- SEASON {
+ SEASONS {
  season_id int "primary"
  season_number int
  program_id int "foreign"
  }
- EPISODE {
+ EPISODES {
  episode_id int "primary"
  episode_number int "NULL"
  episode_title string "NULL"
@@ -42,18 +42,18 @@ erDiagram
  release_date date
  season_id int "foreign NULL"
  }
- VIEWCOUNT {
+ VIEWCOUNTS {
  view_count_id int "primary"
  episode_id int "foreign"
  slot_id int "foreign"
  view_count int
  }
- CATEGORY {
+ CATEGORIES {
  category_id int "primary"
  category_name string
  }
  
- PROGRAMCATEGORY {
+ PROGRAMCATEGORIES {
  program_id int "primary foreign"
  category_id int "primary foreign"
  }
